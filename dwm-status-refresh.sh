@@ -22,7 +22,7 @@ print_temp(){
 }
 
 print_volume () {
-	VOL=$(amixer get Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
+	VOL=50
 	printf "%s" "$SEP1"
 	if [ "$VOL" -eq 0 ]; then
 			printf "🔇"
