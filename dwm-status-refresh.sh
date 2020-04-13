@@ -2,7 +2,7 @@
 # This file was made for `Dynamic Window Manager`'s status bar.
 
 print_date(){
-	date '+%a %Y-%m-%d %H:%M'
+	date '+%a %Y/%m/%d %H:%M'
 }
 
 print_uptime(){
@@ -21,20 +21,6 @@ print_temp(){
 	echo -e "$(head -c 2 /sys/class/thermal/thermal_zone0/temp)°C"
 }
 
-print_volume () {
-	VOL=50
-	printf "%s" "$SEP1"
-	if [ "$VOL" -eq 0 ]; then
-			printf "🔇"
-	elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 30 ]; then
-			printf "🔈 %s%%" "$VOL"
-	elif [ "$VOL" -gt 30 ] && [ "$VOL" -le 60 ]; then
-			printf "🔉 %s%%" "$VOL"
-	else
-			printf "🔊 %s%%" "$VOL"
-	fi
-}
-
-xsetroot -name "Mem: $(print_mem)M $(print_volume) UT:[$(print_uptime)] Temp: $(print_temp) [$(print_date)]"
+xsetroot -name "Mem:$(print_mem)M UT:[$(print_uptime)] Temp:$(print_temp) [$(print_date)]"
 
 exit 0
