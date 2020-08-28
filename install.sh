@@ -1,15 +1,10 @@
 #!/usr/bin/sh
 
 #config /etc/hosts
-echo "127.0.0.1       localhost" > /etc/hosts
-echo "::1             localhost" > /etc/hosts
-echo "127.0.1.1       EthanPluviophile:localdomain    EthanPluviophile" > /etc/hosts
-echo "199.232.4.133   raw.githubusercontent.com" > /etc/hosts
+mv ~/GitHub/Scripts/hosts /etc/hosts
 
-#archlinuxcn
-echo "[archlinuxcn]" > /etc/pacman.conf
-echo "SigLevel = Optional TrustedOnly" > /etc/pacman.conf
-echo "Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch" > /etc/pacman.conf
+#config /etc/pacman.conf
+mv ~/GitHub/Scripts/pacman.conf /etc/pacman.conf
 
 #install archlinuxcn-keyring
 pacman -S archlinuxcn-keyring
@@ -20,11 +15,17 @@ pacman -S yay git neovim wpa_supplicant dhcpcd iw dialog net-tools networkmanage
 #fonts
 yay -S ttf-linux-libertine ttf-inconsolata ttf-joypixels ttf-twemoji-color noto-fonts-emoji ttf-liberation ttf-droid wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei adobe-source-han-mono-cn-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts adobe-source-code-pro-fonts nerd-fonts-source-code-pro noto-fonts ttf-jetbrains-mono
 
+#config /etc/sudoers
+mv ~/GitHub/Scripts/sudoers
+
 #add a new user
 useradd -m -G ethan
 
 #changer user's password
 passwd ethan
+
+#change user to ethan
+su ethan
 
 #install zsh
 yay -S zsh
@@ -56,12 +57,16 @@ cd ~/GitHub/dmenu
 sudo make clean install
 
 #install something
-yay -S google-chrome obs-studio feh gimp cmus pulseaudio pavucontrol lxappearance debtap nvidia nvidia-settings nvidia-utils
+yay -S google-chrome obs-studio feh gimp cmus pulseaudio pavucontrol lxappearance debtap nvidia nvidia-settings nvidia-utils ueberzug ranger
+
+#config ~/.zshrc
+mv ~/GitHub/Scripts/.zshrc ~/.zshrc
 
 #config /etc/pulse/default.pa
 sudo sh ~/GitHub/Scripts/pulse.sh
 
+#enable NetworkManager
+systemctl enable NetworkManager
+
 #config /etc/X11/xinit/xinitrc
-echo "exec dwm" > /etc/X11/xinit/xinitrc
-#then you'd better move "exec dwm" this line to before "twm &"
-#now you can enter "startx" to go into my dwm
+mv /etc/X11/xinit/xinitrc
