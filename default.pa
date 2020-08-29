@@ -141,5 +141,5 @@ load-module module-filter-apply
 #set-default-sink output
 #set-default-source input
 
-set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo
 set-card-profile alsa_card.pci-0000_01_00.1 off
+set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo
