@@ -83,7 +83,7 @@ cd ~/GitHub/dmenu
 sudo make clean install
 
 #install something
-yay -S google-chrome obs-studio feh gimp cmus pulseaudio pavucontrol lxappearance debtap nvidia nvidia-settings nvidia-utils ueberzug ranger vlc
+yay -S google-chrome obs-studio feh gimp cmus pulseaudio pavucontrol lxappearance debtap nvidia nvidia-settings nvidia-utils ueberzug ranger vlc sl typespeed cmatrix figlet 
 
 #config ~/.zshrc
 sudo mv ~/GitHub/Scripts/.zshrc ~/.zshrc
