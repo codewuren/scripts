@@ -19,16 +19,16 @@ yay -S ttf-linux-libertine ttf-inconsolata ttf-joypixels ttf-twemoji-color noto-
 mv ~/GitHub/Scripts/sudoers /etc/sudoers
 
 #add a new user
-useradd -m -G ethan
+useradd -m -G wheel codewuren
 
 #changer user's password
-passwd ethan
+passwd codewuren
 
-#move /root/GitHub to /home/ethan/GitHub
-mv /root/GitHub /home/ethan/GitHub
+#move /root/GitHub to /home/codewuren/GitHub
+mv /root/GitHub /home/codewuren/GitHub
 
 #change user to ethan
-su ethan
+su codewuren
 
 #install zsh
 yay -S zsh
@@ -43,13 +43,13 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 yay -S xorg xorg-xinit
 
 #clone my dwm, st, dmenu GitHub repository
-git clone https://github.com/EthanPluviophile/dwm ~/GitHub/dwm
-git clone https://github.com/EthanPluviophile/st ~/GitHub/st
-git clone https://github.com/EthanPluviophile/dmenu ~/GitHub/dmenu
+git clone https://github.com/codewuren/dwm ~/GitHub/dwm
+git clone https://github.com/codewuren/st ~/GitHub/st
+git clone https://github.com/codewuren/dmenu ~/GitHub/dmenu
 
 #clone my nvim, neofetch config
-git clone https://github.com/EthanPluviophile/nvim ~/.config/nvim
-git clone https://github.com/EthanPluviophile/neofetch ~/.config.neofetch
+git clone https://github.com/codewuren/nvim ~/.config/nvim
+git clone https://github.com/codewuren/neofetch ~/.config.neofetch
 
 #install bash-language-server
 sudo pacman -S bash-language-server
