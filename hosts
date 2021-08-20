@@ -2,7 +2,6 @@
 # See hosts(5) for details.
 127.0.0.1	localhost
 ::1		localhost
-127.0.1.1	EthanPluviophile:localdomain	EthanPluviophile
+127.0.1.1	CodeWuRen:localdomain	CodeWuRen
 
-199.232.4.133	raw.githubusercontent.com
-
+185.199.108.133     raw.githubusercontent.com
