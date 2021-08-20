@@ -1,0 +1,18 @@
+wpa_passphrase yangchao 12345678 > int.conf
+mv int.conf /etc/wpa_supplicant/wpa_supplicant-wlp0s20f0u9u4.conf
+
+wpa_supplicant-wlp0s20f0u9u4.conf add:
+    country=CN
+    update_config=1
+
+systemctl enable wpa_supplicant@wlp0s20f0u9u4
+catch /etc/systemd/network/00-wireless-dhcp.network
+
+00-wireless.dhcp.network add:
+    [Match]
+    Name=wlp0s20f0u9u4
+
+    [Network]
+    DHCP=yes
+
+systemctl enable systemd-networkd.service
