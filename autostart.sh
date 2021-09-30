@@ -2,8 +2,8 @@
 
 picom &
 fcitx5 &
+nm-applet &
 feh --bg-scale ~/Pictures/1.jpg &
 /bin/bash ~/scripts/set-mouse-speed.sh &
 /bin/bash ~/scripts/pulse.sh &
-xset r rate 150 50 &
-numlockx &
+xset r rate 150 35 &
