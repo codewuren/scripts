@@ -37,13 +37,13 @@ print_volume () {
 	VOL=$(amixer get Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
 	printf "%s" "$SEP1"
 	if [ "$VOL" -eq 0 ]; then
-			printf "Vol"
+			printf "Muted"
 	elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 30 ]; then
-			printf "Vol %s%%" "$VOL"
+			printf "Vol: %s%%" "$VOL"
 	elif [ "$VOL" -gt 30 ] && [ "$VOL" -le 60 ]; then
-			printf "Vol %s%%" "$VOL"
+			printf "Vol: %s%%" "$VOL"
 	else
-			printf "Vol %s%%" "$VOL"
+			printf "Vol: %s%%" "$VOL"
 	fi
 }
 
