@@ -33,20 +33,6 @@ print_temp(){
 	echo -e "$(head -c 2 /sys/class/thermal/thermal_zone0/temp)°C"
 }
 
-print_volume () {
-	VOL=$(amixer get Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
-	printf "%s" "$SEP1"
-	if [ "$VOL" -eq 0 ]; then
-			printf "Muted"
-	elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 30 ]; then
-			printf "Vol: %s%%" "$VOL"
-	elif [ "$VOL" -gt 30 ] && [ "$VOL" -le 60 ]; then
-			printf "Vol: %s%%" "$VOL"
-	else
-			printf "Vol: %s%%" "$VOL"
-	fi
-}
-
-xsetroot -name "Mem: $(print_mem)M $(print_volume) UT:[$(print_uptime)] Temp: $(print_temp) [$(print_date)]"
+xsetroot -name "Mem: $(print_mem)M UT:[$(print_uptime)] Temp: $(print_temp) [$(print_date)]"
 
 exit 0
