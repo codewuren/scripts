@@ -5,7 +5,8 @@ fcitx5 &
 nm-applet &
 feh --bg-scale ~/Pictures/1.jpg &
 /bin/bash ~/scripts/dwm-status.sh &
-/bin/bash ~/scripts/xorg.sh &
 /bin/bash ~/scripts/set-mouse-speed.sh &
 /bin/bash ~/scripts/pulse.sh &
+sleep(3)
+/bin/bash ~/scripts/xorg.sh &
 xset r rate 150 35 &
