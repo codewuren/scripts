@@ -2,7 +2,7 @@
 
 COUNT=$(ps -ef |grep bspwm |grep -v "grep" |wc -l)
 
-xinput --set-prop "pointer:Logitech G304" "libinput Accel Speed" -0.4
+xinput --set-prop "pointer:Logitech G304" "libinput Accel Speed" -0
 xset r rate 150 35
 
 while [ $COUNT -ne 0 ]
