@@ -7,6 +7,8 @@ xrandr --dpi 144
 xset s off
 xset dpms 0 0 0
 xset r rate 200 35
+sleep 2
+pgrep -x sxhkd > /dev/null || sxhkd -m 1&
 
 while [ $COUNT -ne 0 ]
 do
