@@ -10,6 +10,6 @@ feh --bg-fill --randomize ~/Pictures/Wallpapers/* &
 xset s off
 xset dpms 0 0 0
 xset r rate 200 35
-sh ~/scripts/dwm-status-bar-refresh.sh &
+/bin/bash ~/scripts/dwm-status-bar-refresh.sh &
 pactl set-card-profile alsa_card.pci-0000_01_00.1 off
 pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo
