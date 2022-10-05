@@ -2,6 +2,7 @@
 
 xinput --set-prop 12 'libinput Accel Profile Enabled' 0, 1
 xrandr --dpi 144
+xinput --set-prop 12 'libinput Accel Speed' -0
 dunst -conf ~/.config/dunst/dunstrc &
 picom &
 nm-applet &
