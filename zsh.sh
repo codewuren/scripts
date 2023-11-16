@@ -1,6 +1,6 @@
 
-#install zsh
-yay -S zsh
+#install zsh and wget
+yay -S zsh wget
 
 #change shell
 chsh -s /bin/zsh
